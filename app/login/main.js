@@ -4,7 +4,7 @@ myApp.controller('LoginCtrl',function ($scope,$timeout) {
     $scope.password = '123456';
     $scope.submit = function () {
         $timeout(function () {
-            location.href = '../home/';
+            location.href = '/books';
         }, 300)
     };
 });

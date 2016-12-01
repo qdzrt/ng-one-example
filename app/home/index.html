@@ -6,13 +6,12 @@
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/angular-1.5.8/angular.min.js"></script>
-    <script src="../js/angular-1.5.8/angular-route.js"></script>
+    <script src="../js/angular-1.5.8/angular-ui-router.js"></script>
     <script src="app.js"></script>
-    <script src="homeCtrl.js"></script>
     <script src="../hello/helloCtrl.js"></script>
     <script src="../book_list/bookListService.js"></script>
     <script src="../book_list/bookListCtrl.js"></script>
-    <base href="/app/home/">
+    <script src="../hello/helloComponent.js"></script>
 </head>
 
 <body>
@@ -21,13 +20,13 @@
 
 <div class="col-md-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
-        <li role="presentation" ng-class="{active: path == '/'}"><a href="./">home</a>
-        <li role="presentation" ng-class="{active: path == '/hello'}"><a href="hello">hello</a>
+        <li role="presentation" ng-class="{active: path == '/'}"><a ui-sref="books" ui-sref-active="active">books</a></li>
+        <li role="presentation" ng-class="{active: path == '/hello'}"><a ui-sref="hello" ui-sref-active="active">hello</a></li>
     </ul>
 </div>
 <div class="col-md-10">
     <div class="container">
-        <div ng-view></div>
+        <ui-view></ui-view>
     </div>
 </div>
 

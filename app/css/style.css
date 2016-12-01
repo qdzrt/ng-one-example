@@ -8,3 +8,5 @@
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.active { color: red; font-weight: bold; }

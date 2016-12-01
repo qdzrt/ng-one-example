@@ -1,12 +1,2 @@
-<div class="frame">
-    <button class="btn btn-info" ng-click="click=!click">Hide/Show</button>
-    <div ng-show="!click">
-        <p>名字：<input type="text" ng-model="name" ></p>
-        <p>Hello,{{name | uppercase}}</p>
-    </div>
-</div>
-
-<div class="frame">
-    <button class="btn btn-danger" ng-click="sayHello()">打招呼</button>
-    <p ng-bind="greeting"></p>
-</div>
+<h3>{{$ctrl.greeting}}</h3>
+<hello></hello>

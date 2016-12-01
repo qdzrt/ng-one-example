@@ -1,26 +1,27 @@
 var myApp = angular.module('myApp',[
-    'ngRoute','myStoreCtrls','helloCtrls','myServiceCtrls'
+    'ui.router','myStoreCtrls','helloCtrls','myServiceCtrls',
+    'helloCom'
 ]);
 
-myApp.config(function ($routeProvider,$locationProvider) {
-    // 使用html5路由
-    $locationProvider.html5Mode(true);
+myApp.config(function ($stateProvider,$urlRouterProvider) {
+    $urlRouterProvider.when('','/books');
 
-    $routeProvider
-    .when('/',{
-        templateUrl: '../book_list/index.html',
-        controller: 'IndexCtrl'
-    }).when('/hello', {
-        templateUrl: '../hello/hello.html',
-        controller: 'HelloCtrl'
-    }).otherwise({
-        redirectTo: '/'
-    });
-})
-    .run(function ($rootScope,$location) {
-        $rootScope.path = $location.path();
+    var helloState = {
+        name: 'hello',
+        url: '/hello',
+        component: 'hello'
+    }
+    // var helloState = {
+    //     name: 'hello',
+    //     url: '/hello',
+    //     templateUrl: '../hello/hello.html'
+    // };
+    var booksState = {
+        name: 'books',
+        url: '/books',
+        templateUrl: '../book_list/index.html'
+    };
 
-        $rootScope.$on('$routeChangeSuccess',function () {
-            $rootScope.path = $location.path();
-        })
-    });
+    $stateProvider.state(helloState);
+    $stateProvider.state(booksState);
+});
