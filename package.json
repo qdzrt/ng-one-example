@@ -1,0 +1,13 @@
+{
+  "name": "ng-one-example",
+  "version": "1.0.0",
+  "description": "'ng-one-example'",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {}
+}
