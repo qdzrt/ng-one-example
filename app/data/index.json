@@ -1,52 +1,52 @@
 [
   {
     "id": 1,
-    "name": "item1",
-    "grp": "grp..."
+    "name": "《Introduction to Programming with Ruby》",
+    "price": "49.50"
   },
   {
     "id": 2,
-    "name": "item2",
-    "grp": "grp..."
+    "name": "《Programming Ruby》",
+    "price": "73.00"
   },
   {
     "id": 3,
-    "name": "item3",
-    "grp": "grp..."
+    "name": "《Ruby 编程语言》",
+    "price": "18.00"
   },
   {
     "id": 4,
-    "name": "item4",
-    "grp": "grp..."
+    "name": "《Ruby 元编程》",
+    "price": "42.00"
   },
   {
     "id": 5,
-    "name": "item5",
-    "grp": "grp..."
+    "name": "《Metaprogramming Ruby》",
+    "price": "255.00"
   },
   {
     "id": 6,
-    "name": "item6",
-    "grp": "grp..."
+    "name": "《应用 Rails 进行敏捷 Web 开发》",
+    "price": "207.50"
   },
   {
     "id": 7,
-    "name": "item7",
-    "grp": "grp..."
+    "name": "《自在独行》",
+    "price": "26.80"
   },
   {
     "id": 8,
-    "name": "item8",
-    "grp": "grp..."
+    "name": "《漫长读中场休息》",
+    "price": "32.90"
   },
   {
     "id": 9,
-    "name": "item9",
-    "grp": "grp..."
+    "name": "《岛上书店》",
+    "price": "14.00"
   },
   {
     "id": 10,
-    "name": "item10",
-    "grp": "grp..."
+    "name": "《丝绸之路》",
+    "price": "75.00"
   }
 ]

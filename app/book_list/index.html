@@ -1,19 +1,26 @@
-<div class="table-responsive">
-    <table class="tabel table-hover table-bordered tbl">
-        <thead>
-        <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>grp</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="list in lists" class="info">
-            <td>{{list.id}}</td>
-            <td>{{list.name}}</td>
-            <td>{{list.grp}}</td>
-        </tr>
-        </tbody>
-    </table>
+<div ng-controller="bookListCtrl">
+    <input type="text" ng-model="name" placeholder="(filter过滤name)">
+    <input type="text" ng-model="newName" placeholder="输入书名">
+    <input type="text" ng-model="newPrice" placeholder="输入价格">
+    <button ng-click="addNewItem()" class="btn btn-primary">添加</button>
+    <div class="table-responsive">
+        <table class="tabel table-hover table-bordered tbl">
+            <thead>
+            <tr>
+                <th class="col-md-2">ID</th>
+                <th class="col-md-4">书名</th>
+                <th class="col-md-3">价格</th>
+                <th class="col-md-3">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="list in lists | filter:name" class="info">
+                <td>{{list.id}}</td>
+                <td>{{list.name}}</td>
+                <td>{{list.price}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+

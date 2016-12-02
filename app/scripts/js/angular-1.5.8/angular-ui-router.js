@@ -2521,7 +2521,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
          * // ...
          *
          * $state.go('home');
-         * // Auto-populates list and item views with /partials/home/contact/list.html,
+         * // Auto-populates list and item views with /partials/home/contact/book_list.html,
          * // and /partials/home/contact/item.html, respectively.
          * </pre>
          *

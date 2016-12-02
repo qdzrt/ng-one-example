@@ -1,6 +1,7 @@
 var myApp = angular.module('myApp',[
-    'ui.router','myStoreCtrls','helloCtrls','myServiceCtrls',
-    'helloCom'
+    'ui.router',
+    'helloCom',
+    'bookListCtrl','bookListService',
 ]);
 
 myApp.config(function ($stateProvider,$urlRouterProvider) {

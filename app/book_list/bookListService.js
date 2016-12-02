@@ -1,6 +1,6 @@
-var myServiceCtrls = angular.module("myServiceCtrls",[]);
+var bookListService = angular.module("bookListService",[]);
 
-myServiceCtrls.factory('bookLists',function ($http) {
+bookListService.factory('bookLists',function ($http, $timeout) {
     var allItems, defer;
     return {
         getItems: function () {
@@ -14,6 +14,13 @@ myServiceCtrls.factory('bookLists',function ($http) {
             }
 
             return defer;
+        },
+
+        addItem: function (item, callback) {
+            $timeout(function () {
+                var res = {};
+                callback(res);
+            }, 300);
         }
     }
 });

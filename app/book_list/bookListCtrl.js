@@ -1,6 +1,6 @@
-var myStoreCtrls = angular.module('myStoreCtrls',[]);
+var bookListCtrl = angular.module('bookListCtrl',[]);
 
-myStoreCtrls.controller('IndexCtrl', [
+bookListCtrl.controller('bookListCtrl', [
     '$scope',
     '$timeout',
     'bookLists',
@@ -14,5 +14,22 @@ myStoreCtrls.controller('IndexCtrl', [
             });
         } else {
             $scope.lists = lists;
+        }
+
+
+        var id = 11;
+        $scope.addNewItem = function () {
+            if (!$scope.newName) return;
+            var item = {
+                id: id++,
+                name: $scope.newName,
+                price: $scope.newPrice
+            };
+
+            bookLists.addItem(item, function () {
+                $scope.lists.push(item);
+                $scope.newName='';
+                $scope.newPrice='';
+            })
         }
 }]);
