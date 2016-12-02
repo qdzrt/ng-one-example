@@ -6,16 +6,16 @@ var myApp = angular.module('myApp',[
 myApp.config(function ($stateProvider,$urlRouterProvider) {
     $urlRouterProvider.when('','/books');
 
-    var helloState = {
-        name: 'hello',
-        url: '/hello',
-        component: 'hello'
-    }
     // var helloState = {
     //     name: 'hello',
     //     url: '/hello',
-    //     templateUrl: '../hello/hello.html'
-    // };
+    //     component: 'hello'
+    // }
+    var helloState = {
+        name: 'hello',
+        url: '/hello',
+        templateUrl: '../hello/hello.html'
+    };
     var booksState = {
         name: 'books',
         url: '/books',
