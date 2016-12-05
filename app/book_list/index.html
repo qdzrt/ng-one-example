@@ -18,6 +18,13 @@
                 <td>{{item.id}}</td>
                 <td>{{item.name}}</td>
                 <td>{{item.price}}</td>
+                <td>
+                    <a ng-click="editItem()">修改</a>
+                    <a ng-click="delItem(item)">删除</a>
+                </td>
+            </tr>
+            <tr ng-if="items.length < 1">
+                <td colspan="4">无结果</td>
             </tr>
             </tbody>
         </table>
