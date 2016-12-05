@@ -1,4 +1,4 @@
-[
+{"books": [
   {
     "id": 1,
     "name": "《Introduction to Programming with Ruby》",
@@ -49,4 +49,4 @@
     "name": "《丝绸之路》",
     "price": "75.00"
   }
-]
+]}
