@@ -1,0 +1,13 @@
+<div class="col-md-2">
+    <ul class="nav nav-pills nav-stacked" role="tablist">
+        <li role="presentation" ng-class="{active: path == '/index/books/list'}">
+            <a ui-sref="index.books.list">books</a>
+        </li>
+        <li role="presentation" ng-class="{active: path == '/index/books/hello'}">
+            <a ui-sref="index.books.hello">hello</a>
+        </li>
+    </ul>
+</div>
+<div class="col-md-10">
+    <div ui-view></div>
+</div>
