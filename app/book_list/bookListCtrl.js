@@ -1,5 +1,5 @@
 angular
-    .module('bookListCtrl',[])
+    .module('bookListMod',[])
     .controller('bookListCtrl', [
         '$scope',
         '$q',
@@ -12,7 +12,7 @@ angular
             items.then(function (data) {
                 $scope.items = data.books;
             },function () {
-                console.log('error');
+                console.log('error'); console.log('error');
             });
 
 

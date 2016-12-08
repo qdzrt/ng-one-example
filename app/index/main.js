@@ -1,12 +1,9 @@
-function getPath($rootScope,$location) {
-    $rootScope.path = $location.path();
-}
-
 angular
     .module('myApp',[
         'ui.router',
         'helloCom',
-        'bookListCtrl','bookListService'
+        'bookListMod','bookListService',
+        'aboutMod'
     ])
     .config(function ($stateProvider,$urlRouterProvider) {
         $urlRouterProvider.otherwise('/index');
@@ -17,12 +14,12 @@ angular
                     '': {
                         templateUrl: '../common/container.html'
                     },
+                    // viewname@statename
                     'topbar@index': {
                         templateUrl: '../common/topbar.html'
                     },
                     'main@index': {
-                        templateUrl: '../home/home.html',
-                        controller: getPath
+                        templateUrl: '../home/home.html'
                     }
                 }
 
@@ -31,28 +28,47 @@ angular
                 url: '/books',
                 views: {
                     'main@index': {
-                        templateUrl: '../book_list/books.html',
-                        controller: getPath
+                        templateUrl: '../book_list/books.html'
                     }
                 }
             })
             .state('index.books.list',{
                 url: '/list',
                 templateUrl: '../book_list/list.html',
-                controller: getPath
+                // 两种controller映射方式：
+                // 一： 页面定义ng-controller="bookListCtrl"
+                // 二： router指定controller(如下)
+                controller: 'bookListCtrl'
+            })
+            .state('index.books.detail',{
+                url: '/{bookId:[0-9]{1,4}}',
+                templateUrl: '../book_list/detail.html',
+                controller: function ($stateParams) {
+                    console.log($stateParams.bookId)
+                }
             })
             .state('index.books.hello',{
                 url: '/hello',
-                templateUrl: '../hello/hello.html',
-                controller: getPath
+                templateUrl: '../hello/hello.html'
             })
             .state('index.about',{
                 url: '/about',
-                views: { // 替换ui-view='main'内容
+                views: { // for "ui-view='main'"
                     'main@index': {
-                        templateUrl: '../about/about.html',
-                        controller: getPath
+                        templateUrl: '../about/about.html'
                     }
                 }
             })
-    });
+    })
+    .run([
+        '$rootScope',
+        '$location',
+        '$state',
+        function ($rootScope, $location, $state) {
+            $rootScope.$on('$stateChangeSuccess', function () {
+                if ($location.path() == '/index/books') return $state.go('index.books.list');
+                $rootScope.path = $location.path();
+            })
+        }
+    ])
+;

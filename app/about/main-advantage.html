@@ -1,0 +1,32 @@
+<div class="container main main-one" ng-controller="mainOne">
+    <div class="col-md-12">
+        <div class="float-l">
+            <input type="checkbox" ng-model="checked1">
+            <span>Why AngularJS?</span>
+        </div>
+        <div class="float-l">
+            <input type="checkbox" ng-model="checked2">
+            <span>Alternatives</span>
+        </div>
+    </div>
+    <div class="col-md-4 col-md-offset-1 margin-t" ng-if="checked1">
+        <h3>Why AngularJS?</h3>
+        <div>
+            HTML is great for declaring static documents,
+            but it falters when we try to use it for declaring dynamic views in web-applications.
+            AngularJS lets you extend HTML vocabulary for your application.
+            The resulting environment is extraordinarily expressive,
+            readable, and quick to develop.
+        </div>
+    </div>
+    <div class="col-md-4 col-md-offset-2 margin-t" ng-if="checked2">
+        <h3>Alternatives</h3>
+        <div>
+            Other frameworks deal with HTML’s shortcomings
+            by either abstracting away HTML, CSS, and/or JavaScript or by providing an imperative way
+            for manipulating the DOM.
+            Neither of these address the root problem that HTML was not designed for dynamic views.
+        </div>
+    </div>
+
+</div>

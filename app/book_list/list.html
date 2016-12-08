@@ -1,4 +1,4 @@
-<div ng-controller="bookListCtrl">
+<div>
     <input type="text" ng-model="name" placeholder="(filter过滤name)">
     <input type="text" ng-model="newName" placeholder="输入书名">
     <input type="text" ng-model="newPrice" placeholder="输入价格">
@@ -15,7 +15,7 @@
             </thead>
             <tbody>
             <tr ng-repeat="item in items | filter:name" class="info">
-                <td>{{item.id}}</td>
+                <td><a ui-sref="index.books.detail({bookId: item.id})">{{item.id}}</a></td>
                 <td>{{item.name}}</td>
                 <td>{{item.price}}</td>
                 <td>
