@@ -11,23 +11,26 @@
 
 <body>
     <div class="container" ng-controller="LoginCtrl">
-        <form class="form-horizontal sign-in" role="form" name="myForm" ng-submit="submit()" novalidate>
-            <div class="form-group">
+        <form class="form-horizontal sign-in" role="form" name="logForm" ng-submit="submit()" novalidate>
+            <div class="form-group" ng-class="{error: logForm.email.$invalid && logForm.email.$dirty}">
                 <div class="col-md-offset-4 col-md-3">
                     <input type="email" class="form-control" placeholder="Email address" name="email" ng-model="email" required>
-                    <span style="background-color: crimson" ng-show="myForm.email.$dirty && myForm.email.$invaild"></span>
-                    <span ng-show="myForm.email.$error.required">邮箱不能为空</span>
-                    <span ng-show="myForm.email.$error.email">非法邮箱地址</span>
+                    <span style="background-color: crimson" ng-show="logForm.email.$dirty && logForm.email.$invaild"></span>
+                    <span ng-show="logForm.email.$error.required">Email is required</span>
+                    <span ng-show="logForm.email.$error.email">Enter a valid email</span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{error: logForm.password.$invalid && !logForm.password.$pristine}">
+                <div class="col-md-offset-4 col-md-3">
+                    <input type="password" class="form-control" placeholder="Password" name="password" ng-model="password" ng-minlength="3" ng-maxlength="8" required>
+                    <span ng-show="logForm.password.$error.required">Password is required</span>
+                    <span ng-show="logForm.password.$error.minlength">Password is too short</span>
+                    <span ng-show="logForm.password.$error.maxlength">Password is too long</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-offset-4 col-md-3">
-                    <input type="password" class="form-control" placeholder="Password" name="password" ng-model="password" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-4 col-md-3">
-                    <button type="submit" class="btn btn-primary btn-block" ng-disabled="myForm.email.$error.required">Sign in</button>
+                    <button type="submit" class="btn btn-primary btn-block" ng-disabled="logForm.$invalid">Sign in</button>
                 </div>
             </div>
         </form>

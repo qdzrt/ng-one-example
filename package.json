@@ -9,5 +9,7 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
 }

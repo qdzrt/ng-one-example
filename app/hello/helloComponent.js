@@ -3,7 +3,7 @@ function sayHello() {
 }
 
 angular
-    .module('helloCom', [])
+    .module('helloComponent', [])
     .component('hello', {
         transclude: true,
         // 注：此处路径非 templateUrl: 'hello_component.html'

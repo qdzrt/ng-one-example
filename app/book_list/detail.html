@@ -1,5 +1,32 @@
-<div>
-    <p>{{item.name}}</p>
-    <p>{{item.price}}</p>
-    <p>detail</p>
+<div ng-controller="bookDetailCtrl">
+    <div class="row">
+        <form class="form-horizontal" role="form" name="bookForm">
+            <div class="form-group" ng-class="{error: bookForm.name.$invalid && bookForm.name.$dirty}">
+                <label class="col-md-2 control-label">Name</label>
+                <div class="col-md-5">
+                    <input type="text" name="name" ng-model="item.name" required>
+                    <span ng-show="bookForm.name.$error.required && !bookForm.name.$pristine">
+                        Required {{bookForm.name.$pristine}}
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{error: bookForm.price.$invalid && bookForm.price.$dirty}">
+                <label class="col-md-2 control-label">Price</label>
+                <div class="col-md-5">
+                    <input type="number" name="price" ng-model="item.price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required>
+                    <span ng-show="bookForm.price.$error.required && !bookForm.price.$pristine">
+                        Required {{bookForm.name.$pristine}}
+                    </span>
+                    <span ng-show="bookForm.price.$error.number">Not valid number</span>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-offset-1">
+                <a class="btn btn-default" ui-sref="index.books.list">Cancel</a>
+                <button class="btn btn-primary" ng-disabled="bookForm.$invalid" ng-click="editItem()">Save</button>
+                <button class="btn btn-danger" ng-click="delItem(item)">Delete</button>
+            </div>
+        </form>
+    </div>
+
 </div>

@@ -1,6 +1,6 @@
 angular
-    .module('aboutMod',[])
-    .controller('mainOne', function ($scope) {
+    .module('aboutModule',[])
+    .controller('mainOneCtrl', function ($scope) {
         $scope.checked1 = true;
         $scope.checked2 = true;
     })

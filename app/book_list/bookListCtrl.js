@@ -1,10 +1,9 @@
 angular
-    .module('bookListMod',[])
+    .module('bookListModule',[])
     .controller('bookListCtrl', [
         '$scope',
-        '$q',
         'bookLists',
-        function ($scope,$q,bookLists) {
+        function ($scope, bookLists) {
             // 同步调用，获得承诺接口
             // 调用承诺API获取数据 .resolve,错误 .reject
             // bookList.getData().then(回调函数)
@@ -12,7 +11,7 @@ angular
             items.then(function (data) {
                 $scope.items = data.books;
             },function () {
-                console.log('error'); console.log('error');
+                console.log('book list error...');
             });
 
 
